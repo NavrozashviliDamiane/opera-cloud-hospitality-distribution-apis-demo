@@ -130,4 +130,44 @@ public class ShopController {
         
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/{hotelCode}/offer")
+    @Operation(summary = "Get single offer detail", description = "Retrieve a single offer by room type and rate plan code")
+    public ResponseEntity<JsonNode> getOfferDetail(
+            @Parameter(description = "Hotel code", required = true)
+            @PathVariable String hotelCode,
+            
+            @Parameter(description = "Room type code", required = true)
+            @RequestParam String roomType,
+            
+            @Parameter(description = "Rate plan code", required = true)
+            @RequestParam String ratePlanCode,
+            
+            @Parameter(description = "Number of adults", required = true)
+            @RequestParam Integer adults,
+            
+            @Parameter(description = "Number of rooms", required = true)
+            @RequestParam Integer numberOfUnits,
+            
+            @Parameter(description = "Arrival date (YYYY-MM-DD)", required = true)
+            @RequestParam String arrivalDate,
+            
+            @Parameter(description = "Departure date (YYYY-MM-DD)", required = true)
+            @RequestParam String departureDate,
+            
+            @RequestHeader("Authorization") String authorization,
+            @RequestHeader("x-app-key") String appKey,
+            @RequestHeader("x-channelCode") String channelCode,
+            @RequestHeader("x-request-id") String requestId) {
+
+        log.info("Offer detail request - hotel: {}, roomType: {}, ratePlanCode: {}, adults: {}, units: {}, arrival: {}, departure: {}, requestId: {}", 
+                 hotelCode, roomType, ratePlanCode, adults, numberOfUnits, arrivalDate, departureDate, requestId);
+
+        JsonNode response = shopService.getOfferDetail(hotelCode, roomType, ratePlanCode);
+        
+        log.info("Returning offer detail for hotel: {}, roomType: {}, ratePlanCode: {}, requestId: {}", 
+                 hotelCode, roomType, ratePlanCode, requestId);
+        
+        return ResponseEntity.ok(response);
+    }
 }

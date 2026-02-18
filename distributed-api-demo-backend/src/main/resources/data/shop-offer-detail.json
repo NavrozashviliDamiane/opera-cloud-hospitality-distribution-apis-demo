@@ -1,0 +1,179 @@
+{
+  "propertyInfo": {
+    "hotelCode": "XSBOXD1",
+    "hotelName": "Sandbox New York Hotel",
+    "chainCode": "OH",
+    "isAlternate": false,
+    "address": {
+      "addressLine": [
+        "123 Broadway Avenue",
+        "Suite 500"
+      ],
+      "countryCode": "US",
+      "cityName": "New York City",
+      "stateProv": "NY",
+      "postalCode": "10012"
+    },
+    "communications": {
+      "phones": [
+        {
+          "phoneTechType": "Voice",
+          "phoneLocationType": "Property direct",
+          "phoneNumber": "+1-212-555-0100"
+        }
+      ],
+      "emails": [
+        {
+          "emailType": "Business",
+          "email": "reservations@sandboxny.com"
+        }
+      ],
+      "urls": [
+        {
+          "url": "www.sandboxnyhotel.com"
+        }
+      ]
+    },
+    "propertyAmenities": [
+      {
+        "hotelAmenity": "1",
+        "description": "Free WiFi",
+        "quantity": 1,
+        "includeInRate": true,
+        "confirmable": false
+      },
+      {
+        "hotelAmenity": "2",
+        "description": "Fitness Center",
+        "quantity": 1,
+        "includeInRate": true,
+        "confirmable": false
+      },
+      {
+        "hotelAmenity": "3",
+        "description": "Swimming Pool",
+        "quantity": 1,
+        "includeInRate": true,
+        "confirmable": false
+      },
+      {
+        "hotelAmenity": "4",
+        "description": "Restaurant",
+        "quantity": 1,
+        "includeInRate": false,
+        "confirmable": false
+      }
+    ],
+    "marketingMessage": "Experience luxury in the heart of Manhattan. Our Deluxe Room offers stunning city views and premium amenities."
+  },
+  "roomType": "A1K",
+  "roomName": "Deluxe Room One King Bed",
+  "roomCategory": "Deluxe",
+  "roomDescription": [
+    "Deluxe room with one king-sized bed.",
+    "Includes high speed internet and premium bedding",
+    "Triple-sheeted, 300-thread-count bedding",
+    "City view with floor-to-ceiling windows"
+  ],
+  "roomAmenities": [
+    {
+      "roomAmenity": "126",
+      "description": "Air conditioning individually controlled in room",
+      "quantity": 1,
+      "includeInRate": true,
+      "confirmable": false
+    },
+    {
+      "roomAmenity": "58",
+      "description": "King bed",
+      "quantity": 1,
+      "includeInRate": true,
+      "confirmable": false
+    },
+    {
+      "roomAmenity": "123",
+      "description": "Wireless internet connection",
+      "quantity": 1,
+      "includeInRate": true,
+      "confirmable": false
+    },
+    {
+      "roomAmenity": "85",
+      "description": "Private bathroom",
+      "quantity": 1,
+      "includeInRate": true,
+      "confirmable": false
+    },
+    {
+      "roomAmenity": "50",
+      "description": "Hairdryer",
+      "quantity": 1,
+      "includeInRate": true,
+      "confirmable": false
+    },
+    {
+      "roomAmenity": "200",
+      "description": "Flat-screen TV",
+      "quantity": 1,
+      "includeInRate": true,
+      "confirmable": false
+    },
+    {
+      "roomAmenity": "201",
+      "description": "Work desk",
+      "quantity": 1,
+      "includeInRate": true,
+      "confirmable": false
+    }
+  ],
+  "occupancy": {
+    "maxOccupancy": 3,
+    "maxAdultOccupancy": 2,
+    "maxChildOccupancy": 1,
+    "maxRollaways": 1,
+    "minOccupancy": 1
+  },
+  "ratePlan": {
+    "ratePlanCode": "FLEX",
+    "ratePlanName": "Flexible Rate",
+    "ratePlanType": "11",
+    "description": "Free cancellation up to 6 PM on arrival date",
+    "cancellationPolicy": {
+      "freeCancellationUntil": "18:00",
+      "cancellationDeadline": "Arrival date",
+      "penaltyPercentage": 100,
+      "penaltyNights": 1
+    }
+  },
+  "rates": [
+    {
+      "arrivalDate": "2024-12-15",
+      "departureDate": "2024-12-16",
+      "numberOfNights": 1,
+      "roomRate": {
+        "amountBeforeTax": 210.11,
+        "amountAfterTax": 231.12,
+        "currencyCode": "USD",
+        "taxAmount": 21.01,
+        "taxPercentage": 10,
+        "rateMode": "Highest",
+        "isCommissionable": true,
+        "commissionPercentage": 10,
+        "hasRateChange": false
+      },
+      "totalRate": {
+        "amountBeforeTax": 210.11,
+        "amountAfterTax": 231.12,
+        "currencyCode": "USD"
+      }
+    }
+  ],
+  "availability": "AvailableForSale",
+  "bookingCode": "BK123456789",
+  "restrictions": {
+    "minStay": 1,
+    "maxStay": 30,
+    "closedToArrival": false,
+    "closedToDeparture": false
+  }
+}
