@@ -99,12 +99,15 @@ public class AgentService {
               }
             }
 
-            ## RULES
-            - Be warm, concise, and helpful
-            - Never make up availability — use the data provided
-            - If a guest asks about something outside hotels, politely redirect
-            - Always confirm the full details before generating the reservation_draft
-            - Only output the JSON object when triggering a reservation_draft, otherwise respond in plain conversational text
+            ## STRICT RULES — READ CAREFULLY
+            - You are a CONVERSATIONAL assistant only. You do NOT call any APIs, HTTP endpoints, or external services.
+            - NEVER call /book/v1/hotels or any booking endpoint. NEVER. The frontend handles the actual booking after the user confirms.
+            - NEVER output a reservation_draft unless ALL six fields are confirmed in the conversation: hotelCode, arrivalDate, departureDate, adults, roomType, ratePlanCode.
+            - If ANY of those fields are missing, keep asking questions — do NOT output JSON.
+            - Only output the reservation_draft JSON when the guest has explicitly confirmed every single detail.
+            - All other responses must be plain conversational text — no JSON, no code blocks.
+            - Be warm, concise, and helpful.
+            - If a guest asks about something outside hotels, politely redirect.
             """;
 
     public JsonNode chat(JsonNode request) {
@@ -152,7 +155,7 @@ public class AgentService {
     private JsonNode parseAgentResponse(String content) {
         String trimmed = content.trim();
 
-        if (trimmed.startsWith("{") || trimmed.contains("\"type\": \"reservation_draft\"")) {
+        if (trimmed.startsWith("{") || trimmed.contains("reservation_draft")) {
             try {
                 String jsonStr = trimmed;
                 if (trimmed.contains("```json")) {
@@ -166,13 +169,24 @@ public class AgentService {
                 JsonNode parsed = objectMapper.readTree(jsonStr);
 
                 if (parsed.has("type") && "reservation_draft".equals(parsed.get("type").asText())) {
-                    log.info("Agent produced reservation_draft for hotel: {}",
-                            parsed.path("reservation_draft").path("hotelCode").asText("unknown"));
+                    JsonNode draft = parsed.path("reservation_draft");
+                    if (!isCompleteDraft(draft)) {
+                        log.warn("Agent returned incomplete reservation_draft — missing required fields. Treating as plain message.");
+                        ObjectNode fallback = objectMapper.createObjectNode();
+                        fallback.put("type", "message");
+                        fallback.put("message", parsed.path("message").asText(
+                                "I still need a few more details before I can prepare your booking. Could you confirm the dates, room type, and rate plan?"));
+                        return fallback;
+                    }
+                    log.info("Agent produced valid reservation_draft for hotel: {}, roomType: {}, ratePlan: {}",
+                            draft.path("hotelCode").asText(),
+                            draft.path("roomType").asText(),
+                            draft.path("ratePlanCode").asText());
                     enrichWithLiveOffers(parsed);
                     return parsed;
                 }
             } catch (Exception e) {
-                log.debug("Response is not JSON, treating as plain message");
+                log.debug("Response is not valid JSON, treating as plain message");
             }
         }
 
@@ -180,6 +194,24 @@ public class AgentService {
         response.put("type", "message");
         response.put("message", content);
         return response;
+    }
+
+    private boolean isCompleteDraft(JsonNode draft) {
+        if (draft == null || draft.isMissingNode()) return false;
+        String hotelCode   = draft.path("hotelCode").asText("");
+        String arrivalDate = draft.path("arrivalDate").asText("");
+        String departureDate = draft.path("departureDate").asText("");
+        String roomType    = draft.path("roomType").asText("");
+        String ratePlanCode = draft.path("ratePlanCode").asText("");
+        int adults         = draft.path("adults").asInt(0);
+        boolean complete = !hotelCode.isBlank() && !arrivalDate.isBlank()
+                && !departureDate.isBlank() && !roomType.isBlank()
+                && !ratePlanCode.isBlank() && adults > 0;
+        if (!complete) {
+            log.warn("Incomplete draft — hotelCode='{}', arrivalDate='{}', departureDate='{}', roomType='{}', ratePlanCode='{}', adults={}",
+                    hotelCode, arrivalDate, departureDate, roomType, ratePlanCode, adults);
+        }
+        return complete;
     }
 
     private void enrichWithLiveOffers(JsonNode draftResponse) {
