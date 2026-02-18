@@ -23,19 +23,13 @@ public class AgentController {
         summary = "Chat with reservation agent",
         description = "Send a conversation history to the AI agent. Returns either a chat message or a structured reservation_draft when enough info is collected."
     )
-    public ResponseEntity<JsonNode> chat(
-            @RequestBody JsonNode request,
-            @RequestHeader("Authorization") String authorization,
-            @RequestHeader("x-app-key") String appKey,
-            @RequestHeader("x-channelCode") String channelCode,
-            @RequestHeader("x-request-id") String requestId) {
-
-        log.info("Agent chat request - requestId: {}", requestId);
+    public ResponseEntity<JsonNode> chat(@RequestBody JsonNode request) {
+        log.info("Agent chat request received");
 
         JsonNode response = agentService.chat(request);
 
-        log.info("Agent chat response type: {}, requestId: {}",
-                response.has("reservation_draft") ? "reservation_draft" : "message", requestId);
+        log.info("Agent chat response type: {}",
+                response.has("reservation_draft") ? "reservation_draft" : "message");
 
         return ResponseEntity.ok(response);
     }
