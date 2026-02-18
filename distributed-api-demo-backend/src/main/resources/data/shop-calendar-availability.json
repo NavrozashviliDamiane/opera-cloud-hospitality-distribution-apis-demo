@@ -1,0 +1,119 @@
+{
+  "roomStays": [
+    {
+      "propertyInfo": {
+        "hotelCode": "XSBOXD1",
+        "hotelName": "Sandbox New York Hotel",
+        "chainCode": "OH",
+        "isAlternate": false
+      },
+      "availability": "AvailableForSale",
+      "calendarItems": [
+        {
+          "arrivalDate": "2024-12-01",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 191,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": false,
+            "hasRateChange": true
+          }
+        },
+        {
+          "arrivalDate": "2024-12-02",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 194.34,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": false,
+            "hasRateChange": true
+          }
+        },
+        {
+          "arrivalDate": "2024-12-03",
+          "availability": "Restricted",
+          "rate": null
+        },
+        {
+          "arrivalDate": "2024-12-04",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 200.00,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": false,
+            "hasRateChange": false
+          }
+        },
+        {
+          "arrivalDate": "2024-12-05",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 205.50,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": false,
+            "hasRateChange": true
+          }
+        },
+        {
+          "arrivalDate": "2024-12-06",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 285.00,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": true,
+            "hasRateChange": true
+          }
+        },
+        {
+          "arrivalDate": "2024-12-07",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 295.00,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": true,
+            "hasRateChange": false
+          }
+        },
+        {
+          "arrivalDate": "2024-12-08",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 210.00,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": false,
+            "hasRateChange": true
+          }
+        },
+        {
+          "arrivalDate": "2024-12-09",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 195.00,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": false,
+            "hasRateChange": true
+          }
+        },
+        {
+          "arrivalDate": "2024-12-10",
+          "availability": "AvailableForSale",
+          "rate": {
+            "amountBeforeTax": 198.50,
+            "currencyCode": "USD",
+            "rateMode": "Average",
+            "isCommissionable": false,
+            "hasRateChange": false
+          }
+        }
+      ]
+    }
+  ]
+}

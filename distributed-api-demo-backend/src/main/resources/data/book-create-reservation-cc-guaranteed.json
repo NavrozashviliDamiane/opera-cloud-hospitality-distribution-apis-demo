@@ -1,0 +1,139 @@
+[
+  {
+    "reservationIds": [
+      {
+        "id": "229299",
+        "type": "Reservation",
+        "idContext": "Central",
+        "idExtension": "1"
+      },
+      {
+        "id": "2611725",
+        "type": "Confirmation",
+        "idContext": "Central",
+        "idExtension": "1"
+      }
+    ],
+    "lastModifyDateTime": "2025-03-10T22:29:10Z",
+    "reservationStatus": "Reserved",
+    "roomStay": {
+      "arrivalDate": "2024-12-10",
+      "departureDate": "2024-12-11",
+      "guestCounts": {
+        "adults": 1,
+        "children": 0
+      },
+      "guarantee": {
+        "guaranteeCode": "GCID",
+        "guaranteeType": "5",
+        "creditCard": {
+          "cardType": "VI",
+          "cardNumberMasked": "************1111",
+          "expirationDate": "1225"
+        }
+      },
+      "printRate": false,
+      "roomRates": [
+        {
+          "rates": {
+            "rate": [
+              {
+                "base": {
+                  "amountBeforeTax": 178.00,
+                  "currencyCode": "USD"
+                },
+                "start": "2024-12-10",
+                "end": "2024-12-10"
+              }
+            ]
+          },
+          "guestCounts": {
+            "adults": 1,
+            "children": 0
+          },
+          "roomType": "A1K",
+          "ratePlanCode": "EARLY",
+          "numberOfUnits": 1,
+          "start": "2024-12-10",
+          "end": "2024-12-10",
+          "ratePlanInfo": {
+            "ratePlanName": "Early Bird Special",
+            "ratePlanType": "12",
+            "identificationRequired": false
+          },
+          "total": {
+            "amountBeforeTax": 178.00,
+            "amountAfterTax": 195.80,
+            "currencyCode": "USD",
+            "taxes": [
+              {
+                "amount": 17.80,
+                "code": "TAX",
+                "description": "Room Tax"
+              }
+            ]
+          }
+        }
+      ],
+      "total": {
+        "amountBeforeTax": 178.00,
+        "amountAfterTax": 195.80,
+        "currencyCode": "USD"
+      },
+      "expectedTimes": {
+        "reservationExpectedArrivalTime": "15:00:00",
+        "reservationExpectedDepartureTime": "11:00:00"
+      }
+    },
+    "reservationGuests": [
+      {
+        "profileInfo": {
+          "profile": {
+            "customer": {
+              "personName": [
+                {
+                  "surname": "Smith",
+                  "givenName": "John",
+                  "nameType": "Primary"
+                }
+              ],
+              "email": [
+                {
+                  "email": "john.smith@example.com",
+                  "emailType": "Business"
+                }
+              ],
+              "telephone": [
+                {
+                  "phoneNumber": "+1-555-123-4567",
+                  "phoneTechType": "Voice"
+                }
+              ]
+            }
+          }
+        },
+        "primary": true
+      }
+    ],
+    "reservationPolicies": {
+      "cancelPenalty": [
+        {
+          "deadline": "2024-12-07T23:59:59",
+          "penaltyDescription": "Cancel 3 days prior to arrival to avoid penalty",
+          "amount": {
+            "amountBeforeTax": 178.00,
+            "currencyCode": "USD"
+          }
+        }
+      ],
+      "depositPolicy": {
+        "depositRequired": true,
+        "depositAmount": {
+          "amountBeforeTax": 178.00,
+          "currencyCode": "USD"
+        },
+        "depositDueDate": "2024-12-07T23:59:59"
+      }
+    }
+  }
+]

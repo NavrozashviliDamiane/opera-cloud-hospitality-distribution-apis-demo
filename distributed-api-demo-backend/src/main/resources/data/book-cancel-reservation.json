@@ -1,0 +1,26 @@
+[
+  {
+    "reservationIds": [
+      {
+        "id": "229301",
+        "type": "Reservation",
+        "idContext": "Central",
+        "idExtension": "1"
+      },
+      {
+        "id": "2611727",
+        "type": "Confirmation",
+        "idContext": "Central",
+        "idExtension": "1"
+      }
+    ],
+    "lastModifyDateTime": "2025-03-10T23:15:42Z",
+    "reservationStatus": "Cancelled",
+    "cancellationNumber": "CANC2611727",
+    "roomStay": {
+      "arrivalDate": "2024-12-10",
+      "departureDate": "2024-12-11",
+      "cancellationDate": "2025-03-10T23:15:42Z"
+    }
+  }
+]

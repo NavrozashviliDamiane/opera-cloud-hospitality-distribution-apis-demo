@@ -1,0 +1,144 @@
+[
+  {
+    "reservationIds": [
+      {
+        "id": "229301",
+        "type": "Reservation",
+        "idContext": "Central",
+        "idExtension": "1"
+      },
+      {
+        "id": "2611727",
+        "type": "Confirmation",
+        "idContext": "Central",
+        "idExtension": "1"
+      }
+    ],
+    "lastModifyDateTime": "2025-03-10T22:30:37Z",
+    "reservationStatus": "Reserved",
+    "roomStay": {
+      "arrivalDate": "2024-12-10",
+      "departureDate": "2024-12-11",
+      "guestCounts": {
+        "adults": 1,
+        "children": 0
+      },
+      "guarantee": {
+        "guaranteeCode": "6PM",
+        "guaranteeType": "38"
+      },
+      "printRate": false,
+      "roomRates": [
+        {
+          "rates": {
+            "rate": [
+              {
+                "base": {
+                  "amountBeforeTax": 210.11,
+                  "currencyCode": "USD"
+                },
+                "start": "2024-12-10",
+                "end": "2024-12-10"
+              }
+            ]
+          },
+          "guestCounts": {
+            "adults": 1,
+            "children": 0
+          },
+          "roomType": "A1K",
+          "ratePlanCode": "FLEX",
+          "numberOfUnits": 1,
+          "start": "2024-12-10",
+          "end": "2024-12-10",
+          "ratePlanInfo": {
+            "ratePlanName": "Flexible Rate",
+            "ratePlanType": "11",
+            "identificationRequired": false
+          },
+          "suppressRate": false,
+          "total": {
+            "amountBeforeTax": 210.11,
+            "amountAfterTax": 231.12,
+            "currencyCode": "USD",
+            "taxes": [
+              {
+                "amount": 21.01,
+                "code": "TAX",
+                "description": "Room Tax"
+              }
+            ]
+          }
+        }
+      ],
+      "total": {
+        "amountBeforeTax": 210.11,
+        "amountAfterTax": 231.12,
+        "currencyCode": "USD"
+      },
+      "expectedTimes": {
+        "reservationExpectedArrivalTime": "15:00:00",
+        "reservationExpectedDepartureTime": "11:00:00"
+      }
+    },
+    "reservationGuests": [
+      {
+        "profileInfo": {
+          "profile": {
+            "customer": {
+              "personName": [
+                {
+                  "surname": "Smith",
+                  "givenName": "John",
+                  "nameTitle": "Mr",
+                  "nameType": "Primary"
+                }
+              ],
+              "email": [
+                {
+                  "email": "john.smith@example.com",
+                  "emailType": "Business"
+                }
+              ],
+              "telephone": [
+                {
+                  "phoneNumber": "+1-555-123-4567",
+                  "phoneTechType": "Voice"
+                }
+              ],
+              "address": [
+                {
+                  "addressLine": [
+                    "123 Main Street"
+                  ],
+                  "cityName": "New York",
+                  "postalCode": "10001",
+                  "stateProv": "NY",
+                  "countryCode": "US"
+                }
+              ]
+            }
+          }
+        },
+        "primary": true
+      }
+    ],
+    "reservationPolicies": {
+      "cancelPenalty": [
+        {
+          "deadline": "2024-12-10T18:00:00",
+          "penaltyDescription": "Cancel by 6PM on day of arrival to avoid penalty",
+          "amount": {
+            "amountBeforeTax": 210.11,
+            "currencyCode": "USD"
+          }
+        }
+      ],
+      "guarantee": {
+        "guaranteeType": "38",
+        "guaranteeCode": "6PM",
+        "description": "6PM Hold - Reservation held until 6PM on arrival date"
+      }
+    }
+  }
+]

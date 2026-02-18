@@ -1,0 +1,386 @@
+{
+  "roomStays": [
+    {
+      "propertyInfo": {
+        "hotelCode": "XSBOXD1",
+        "hotelName": "Sandbox New York Hotel",
+        "chainCode": "OH",
+        "isAlternate": false,
+        "address": {
+          "addressLine": [
+            "123 Broadway Avenue",
+            "Suite 500"
+          ],
+          "countryCode": "US",
+          "cityName": "New York City",
+          "stateProv": "NY",
+          "postalCode": "10012"
+        },
+        "communications": {
+          "phones": [
+            {
+              "phoneTechType": "Voice",
+              "phoneLocationType": "Property direct",
+              "phoneNumber": "+1-212-555-0100"
+            }
+          ],
+          "emails": [
+            {
+              "emailType": "Business",
+              "email": "reservations@sandboxny.com"
+            }
+          ],
+          "urls": [
+            {
+              "url": "www.sandboxnyhotel.com"
+            }
+          ]
+        },
+        "marketingMessage": "Thank you for choosing Sandbox New York Hotel. Experience luxury in the heart of Manhattan."
+      },
+      "availability": "AvailableForSale",
+      "roomTypes": [
+        {
+          "availabilityStatus": "AvailableForSale",
+          "roomType": "A1K",
+          "description": [
+            "Deluxe room with one king-sized bed.",
+            "Includes high speed internet and premium bedding",
+            "Triple-sheeted, 300-thread-count bedding",
+            "City view with floor-to-ceiling windows"
+          ],
+          "roomName": "Deluxe Room One King Bed",
+          "roomCategory": "Deluxe",
+          "roomAmenities": [
+            {
+              "roomAmenity": "126",
+              "description": "Air conditioning individually controlled in room",
+              "availabilityStatus": "AvailableForSale",
+              "quantity": 1,
+              "includeInRate": true,
+              "confirmable": false
+            },
+            {
+              "roomAmenity": "58",
+              "description": "King bed",
+              "availabilityStatus": "AvailableForSale",
+              "quantity": 1,
+              "includeInRate": true,
+              "confirmable": false
+            },
+            {
+              "roomAmenity": "123",
+              "description": "Wireless internet connection",
+              "availabilityStatus": "AvailableForSale",
+              "quantity": 1,
+              "includeInRate": true,
+              "confirmable": false
+            },
+            {
+              "roomAmenity": "85",
+              "description": "Private bathroom",
+              "availabilityStatus": "AvailableForSale",
+              "quantity": 1,
+              "includeInRate": true,
+              "confirmable": false
+            },
+            {
+              "roomAmenity": "50",
+              "description": "Hairdryer",
+              "availabilityStatus": "AvailableForSale",
+              "quantity": 1,
+              "includeInRate": true,
+              "confirmable": false
+            }
+          ],
+          "occupancy": {
+            "maxOccupancy": 3,
+            "maxAdultOccupancy": 2,
+            "maxChildOccupancy": 1,
+            "maxRollaways": 1,
+            "maxCribs": 1
+          },
+          "ratePlans": [
+            {
+              "ratePlanCode": "FLEX",
+              "ratePlanName": "Flexible Rate",
+              "ratePlanType": "11",
+              "availabilityStatus": "AvailableForSale",
+              "identificationRequired": false,
+              "taxInclusive": false,
+              "rates": {
+                "rate": [
+                  {
+                    "base": {
+                      "amountBeforeTax": 210.11,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-10",
+                    "end": "2024-12-10"
+                  },
+                  {
+                    "base": {
+                      "amountBeforeTax": 215.50,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-11",
+                    "end": "2024-12-11"
+                  },
+                  {
+                    "base": {
+                      "amountBeforeTax": 220.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-12",
+                    "end": "2024-12-12"
+                  }
+                ]
+              },
+              "total": {
+                "amountBeforeTax": 645.61,
+                "amountAfterTax": 710.17,
+                "currencyCode": "USD"
+              },
+              "guarantee": {
+                "guaranteeType": "38",
+                "guaranteeCode": "6PM",
+                "description": "6PM Hold"
+              },
+              "cancelPenalty": {
+                "deadline": "2024-12-09T18:00:00",
+                "penaltyDescription": "Cancel by 6PM on day of arrival to avoid penalty",
+                "amount": {
+                  "amountBeforeTax": 210.11,
+                  "currencyCode": "USD"
+                }
+              },
+              "mealPlan": {
+                "mealPlanCode": "14",
+                "description": "Breakfast"
+              }
+            },
+            {
+              "ratePlanCode": "EARLY",
+              "ratePlanName": "Early Bird Special",
+              "ratePlanType": "12",
+              "availabilityStatus": "AvailableForSale",
+              "identificationRequired": false,
+              "taxInclusive": false,
+              "rates": {
+                "rate": [
+                  {
+                    "base": {
+                      "amountBeforeTax": 178.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-10",
+                    "end": "2024-12-10"
+                  },
+                  {
+                    "base": {
+                      "amountBeforeTax": 182.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-11",
+                    "end": "2024-12-11"
+                  },
+                  {
+                    "base": {
+                      "amountBeforeTax": 185.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-12",
+                    "end": "2024-12-12"
+                  }
+                ]
+              },
+              "total": {
+                "amountBeforeTax": 545.00,
+                "amountAfterTax": 599.50,
+                "currencyCode": "USD"
+              },
+              "guarantee": {
+                "guaranteeType": "5",
+                "guaranteeCode": "GCID",
+                "description": "Credit Card Guarantee"
+              },
+              "cancelPenalty": {
+                "deadline": "2024-12-07T23:59:59",
+                "penaltyDescription": "Cancel 3 days prior to arrival to avoid penalty",
+                "amount": {
+                  "amountBeforeTax": 178.00,
+                  "currencyCode": "USD"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "availabilityStatus": "AvailableForSale",
+          "roomType": "B1K",
+          "description": [
+            "Standard room with one king-sized bed.",
+            "Comfortable accommodations with modern amenities"
+          ],
+          "roomName": "Standard Room One King Bed",
+          "roomCategory": "Standard",
+          "roomAmenities": [
+            {
+              "roomAmenity": "126",
+              "description": "Air conditioning individually controlled in room",
+              "availabilityStatus": "AvailableForSale",
+              "quantity": 1,
+              "includeInRate": true,
+              "confirmable": false
+            },
+            {
+              "roomAmenity": "58",
+              "description": "King bed",
+              "availabilityStatus": "AvailableForSale",
+              "quantity": 1,
+              "includeInRate": true,
+              "confirmable": false
+            },
+            {
+              "roomAmenity": "123",
+              "description": "Wireless internet connection",
+              "availabilityStatus": "AvailableForSale",
+              "quantity": 1,
+              "includeInRate": true,
+              "confirmable": false
+            }
+          ],
+          "occupancy": {
+            "maxOccupancy": 2,
+            "maxAdultOccupancy": 2,
+            "maxChildOccupancy": 0,
+            "maxRollaways": 0,
+            "maxCribs": 1
+          },
+          "ratePlans": [
+            {
+              "ratePlanCode": "FLEX",
+              "ratePlanName": "Flexible Rate",
+              "ratePlanType": "11",
+              "availabilityStatus": "AvailableForSale",
+              "identificationRequired": false,
+              "taxInclusive": false,
+              "rates": {
+                "rate": [
+                  {
+                    "base": {
+                      "amountBeforeTax": 180.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-10",
+                    "end": "2024-12-10"
+                  },
+                  {
+                    "base": {
+                      "amountBeforeTax": 180.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-11",
+                    "end": "2024-12-11"
+                  },
+                  {
+                    "base": {
+                      "amountBeforeTax": 180.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-12",
+                    "end": "2024-12-12"
+                  }
+                ]
+              },
+              "total": {
+                "amountBeforeTax": 540.00,
+                "amountAfterTax": 594.00,
+                "currencyCode": "USD"
+              },
+              "guarantee": {
+                "guaranteeType": "38",
+                "guaranteeCode": "6PM",
+                "description": "6PM Hold"
+              },
+              "cancelPenalty": {
+                "deadline": "2024-12-09T18:00:00",
+                "penaltyDescription": "Cancel by 6PM on day of arrival to avoid penalty",
+                "amount": {
+                  "amountBeforeTax": 180.00,
+                  "currencyCode": "USD"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "availabilityStatus": "AvailableForSale",
+          "roomType": "C2Q",
+          "description": [
+            "Superior room with two queen beds.",
+            "Perfect for families or groups",
+            "Spacious layout with sitting area"
+          ],
+          "roomName": "Superior Room Two Queen Beds",
+          "roomCategory": "Superior",
+          "occupancy": {
+            "maxOccupancy": 4,
+            "maxAdultOccupancy": 4,
+            "maxChildOccupancy": 2,
+            "maxRollaways": 0,
+            "maxCribs": 1
+          },
+          "ratePlans": [
+            {
+              "ratePlanCode": "FLEX",
+              "ratePlanName": "Flexible Rate",
+              "ratePlanType": "11",
+              "availabilityStatus": "AvailableForSale",
+              "identificationRequired": false,
+              "taxInclusive": false,
+              "rates": {
+                "rate": [
+                  {
+                    "base": {
+                      "amountBeforeTax": 245.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-10",
+                    "end": "2024-12-10"
+                  },
+                  {
+                    "base": {
+                      "amountBeforeTax": 250.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-11",
+                    "end": "2024-12-11"
+                  },
+                  {
+                    "base": {
+                      "amountBeforeTax": 255.00,
+                      "currencyCode": "USD"
+                    },
+                    "start": "2024-12-12",
+                    "end": "2024-12-12"
+                  }
+                ]
+              },
+              "total": {
+                "amountBeforeTax": 750.00,
+                "amountAfterTax": 825.00,
+                "currencyCode": "USD"
+              },
+              "guarantee": {
+                "guaranteeType": "38",
+                "guaranteeCode": "6PM",
+                "description": "6PM Hold"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

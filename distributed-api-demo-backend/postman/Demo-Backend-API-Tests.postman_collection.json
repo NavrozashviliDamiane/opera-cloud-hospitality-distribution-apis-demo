@@ -1,0 +1,667 @@
+{
+	"info": {
+		"_postman_id": "demo-backend-001",
+		"name": "Oracle Hospitality Distribution API - Demo Backend",
+		"description": "Test collection for the Spring Boot demo backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shop API",
+			"item": [
+				{
+					"name": "Multi-Property Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/shop/v1/hotels?adults=2&numberOfUnits=1&arrivalDate=2024-12-10&departureDate=2024-12-13&chainCode=OH&hotelCodes=XSBOXD1,XSBOXD2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shop",
+								"v1",
+								"hotels"
+							],
+							"query": [
+								{
+									"key": "adults",
+									"value": "2"
+								},
+								{
+									"key": "numberOfUnits",
+									"value": "1"
+								},
+								{
+									"key": "arrivalDate",
+									"value": "2024-12-10"
+								},
+								{
+									"key": "departureDate",
+									"value": "2024-12-13"
+								},
+								{
+									"key": "chainCode",
+									"value": "OH"
+								},
+								{
+									"key": "hotelCodes",
+									"value": "XSBOXD1,XSBOXD2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Property Offers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/shop/v1/hotels/XSBOXD1/offers?adults=1&numberOfUnits=1&arrivalDate=2024-12-10&departureDate=2024-12-13&ratePlanCodes=FLEX",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shop",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"offers"
+							],
+							"query": [
+								{
+									"key": "adults",
+									"value": "1"
+								},
+								{
+									"key": "numberOfUnits",
+									"value": "1"
+								},
+								{
+									"key": "arrivalDate",
+									"value": "2024-12-10"
+								},
+								{
+									"key": "departureDate",
+									"value": "2024-12-13"
+								},
+								{
+									"key": "ratePlanCodes",
+									"value": "FLEX"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Calendar Availability",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/shop/v1/hotels/XSBOXD1/calendar?adults=2&numberOfUnits=1&startDate=2024-12-01&endDate=2024-12-10&lengthOfStay=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shop",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "adults",
+									"value": "2"
+								},
+								{
+									"key": "numberOfUnits",
+									"value": "1"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-12-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-12-10"
+								},
+								{
+									"key": "lengthOfStay",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book API",
+			"item": [
+				{
+					"name": "Create Reservation (Non-Guaranteed)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var jsonData = pm.response.json();",
+									"    if (jsonData && jsonData.length > 0 && jsonData[0].reservationIds) {",
+									"        var confirmationId = jsonData[0].reservationIds.find(id => id.type === 'Confirmation');",
+									"        if (confirmationId) {",
+									"            pm.environment.set('confirmationNumber', confirmationId.id);",
+									"            console.log('Confirmation number saved: ' + confirmationId.id);",
+									"        }",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reservations\": [\n        {\n            \"roomStay\": {\n                \"arrivalDate\": \"2024-12-10\",\n                \"departureDate\": \"2024-12-11\",\n                \"roomRates\": [\n                    {\n                        \"guestCounts\": {\n                            \"adults\": 1\n                        },\n                        \"roomType\": \"A1K\",\n                        \"ratePlanCode\": \"FLEX\",\n                        \"numberOfUnits\": 1,\n                        \"start\": \"2024-12-10\",\n                        \"end\": \"2024-12-10\"\n                    }\n                ],\n                \"guarantee\": {\n                    \"guaranteeType\": \"38\"\n                },\n                \"printRate\": true\n            },\n            \"reservationGuests\": [\n                {\n                    \"profileInfo\": {\n                        \"profile\": {\n                            \"customer\": {\n                                \"personName\": [\n                                    {\n                                        \"surname\": \"Smith\",\n                                        \"givenName\": \"John\",\n                                        \"nameTitle\": \"Mr\",\n                                        \"nameType\": \"Primary\",\n                                        \"email\": \"john.smith@example.com\",\n                                        \"phoneNumber\": \"+1-555-123-4567\",\n                                        \"address\": {\n                                            \"addressLine\": [\n                                                \"123 Main Street\"\n                                            ],\n                                            \"cityName\": \"New York\",\n                                            \"postalCode\": \"10001\",\n                                            \"stateProv\": \"NY\",\n                                            \"countryCode\": \"US\"\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    }\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/book/v1/hotels/XSBOXD1/reservations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reservation (Credit Card Guaranteed)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    var jsonData = pm.response.json();",
+									"    if (jsonData && jsonData.length > 0 && jsonData[0].reservationIds) {",
+									"        var confirmationId = jsonData[0].reservationIds.find(id => id.type === 'Confirmation');",
+									"        if (confirmationId) {",
+									"            pm.environment.set('confirmationNumber', confirmationId.id);",
+									"            console.log('Confirmation number saved: ' + confirmationId.id);",
+									"        }",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reservations\": [\n        {\n            \"roomStay\": {\n                \"arrivalDate\": \"2024-12-10\",\n                \"departureDate\": \"2024-12-11\",\n                \"roomRates\": [\n                    {\n                        \"guestCounts\": {\n                            \"adults\": 1\n                        },\n                        \"roomType\": \"A1K\",\n                        \"ratePlanCode\": \"EARLY\",\n                        \"numberOfUnits\": 1,\n                        \"start\": \"2024-12-10\",\n                        \"end\": \"2024-12-10\"\n                    }\n                ],\n                \"guarantee\": {\n                    \"guaranteeType\": \"5\",\n                    \"creditCard\": {\n                        \"cardType\": \"VI\",\n                        \"cardNumber\": \"4111111111111111\",\n                        \"expirationDate\": \"1225\",\n                        \"cardHolderName\": \"John Smith\"\n                    }\n                },\n                \"printRate\": true\n            },\n            \"reservationGuests\": [\n                {\n                    \"profileInfo\": {\n                        \"profile\": {\n                            \"customer\": {\n                                \"personName\": [\n                                    {\n                                        \"surname\": \"Smith\",\n                                        \"givenName\": \"John\",\n                                        \"nameType\": \"Primary\",\n                                        \"email\": \"john.smith@example.com\",\n                                        \"phoneNumber\": \"+1-555-123-4567\"\n                                    }\n                                ]\n                            }\n                        }\n                    }\n                }\n            ]\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/book/v1/hotels/XSBOXD1/reservations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Reservation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/book/v1/hotels/XSBOXD1/reservations/{{confirmationNumber}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"reservations",
+								"{{confirmationNumber}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Reservation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reservations\": [\n        {\n            \"roomStay\": {\n                \"arrivalDate\": \"2024-12-11\",\n                \"departureDate\": \"2024-12-12\",\n                \"roomRates\": [\n                    {\n                        \"guestCounts\": {\n                            \"adults\": 2\n                        },\n                        \"roomType\": \"A1K\",\n                        \"ratePlanCode\": \"FLEX\",\n                        \"numberOfUnits\": 1\n                    }\n                ]\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/book/v1/hotels/XSBOXD1/reservations/{{confirmationNumber}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"reservations",
+								"{{confirmationNumber}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Reservation",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/book/v1/hotels/XSBOXD1/reservations/{{confirmationNumber}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"reservations",
+								"{{confirmationNumber}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Error Scenarios",
+			"item": [
+				{
+					"name": "Missing Required Parameter (400)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/shop/v1/hotels?adults=2&numberOfUnits=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shop",
+								"v1",
+								"hotels"
+							],
+							"query": [
+								{
+									"key": "adults",
+									"value": "2"
+								},
+								{
+									"key": "numberOfUnits",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reservation Not Found (404)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/book/v1/hotels/XSBOXD1/reservations/9999999",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"reservations",
+								"9999999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "No Availability (409) - Keep Trying",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-app-key",
+								"value": "{{appKey}}",
+								"type": "text"
+							},
+							{
+								"key": "x-channelCode",
+								"value": "{{channelCode}}",
+								"type": "text"
+							},
+							{
+								"key": "x-request-id",
+								"value": "{{$guid}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"reservations\": [\n        {\n            \"roomStay\": {\n                \"arrivalDate\": \"2024-12-10\",\n                \"departureDate\": \"2024-12-11\",\n                \"roomRates\": [\n                    {\n                        \"guestCounts\": {\n                            \"adults\": 1\n                        },\n                        \"roomType\": \"A1K\",\n                        \"ratePlanCode\": \"FLEX\",\n                        \"numberOfUnits\": 1\n                    }\n                ]\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/book/v1/hotels/XSBOXD1/reservations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"book",
+								"v1",
+								"hotels",
+								"XSBOXD1",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/actuator/health",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		}
+	]
+}

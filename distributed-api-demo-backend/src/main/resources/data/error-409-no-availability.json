@@ -1,0 +1,10 @@
+{
+  "title": "Requested offer is not available",
+  "status": 409,
+  "o:errorCode": "DCRG00250",
+  "type": "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4",
+  "timestamp": "2024-12-01T10:30:00Z",
+  "logId": 123456791,
+  "o:errorPath": "/book/v1/hotels/XSBOXD1/reservations",
+  "detail": "No availability for requested room type and rate plan on specified dates"
+}

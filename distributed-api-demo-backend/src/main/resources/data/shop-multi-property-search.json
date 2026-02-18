@@ -1,0 +1,89 @@
+{
+  "roomStays": [
+    {
+      "propertyInfo": {
+        "hotelCode": "XSBOXD1",
+        "hotelName": "Sandbox New York Hotel",
+        "chainCode": "OH",
+        "isAlternate": false
+      },
+      "availability": "AvailableForSale",
+      "minRate": {
+        "amountBeforeTax": 162,
+        "currencyCode": "USD",
+        "rateMode": "Highest",
+        "isCommissionable": false,
+        "hasRateChange": true
+      },
+      "maxRate": {
+        "amountBeforeTax": 352,
+        "currencyCode": "USD",
+        "rateMode": "Highest",
+        "isCommissionable": true,
+        "hasRateChange": true
+      }
+    },
+    {
+      "propertyInfo": {
+        "hotelCode": "XSBOXD2",
+        "hotelName": "Sandbox Paris Hotel",
+        "chainCode": "OH",
+        "isAlternate": false
+      },
+      "availability": "AvailableForSale",
+      "minRate": {
+        "amountBeforeTax": 101,
+        "currencyCode": "EUR",
+        "rateMode": "Highest",
+        "isCommissionable": true,
+        "hasRateChange": true
+      },
+      "maxRate": {
+        "amountAfterTax": 302,
+        "currencyCode": "EUR",
+        "rateMode": "Highest",
+        "isCommissionable": false,
+        "hasRateChange": true
+      }
+    },
+    {
+      "propertyInfo": {
+        "hotelCode": "XSBOXD3",
+        "hotelName": "Sandbox London Hotel",
+        "chainCode": "OH",
+        "isAlternate": false
+      },
+      "availability": "AvailableForSale",
+      "minRate": {
+        "amountBeforeTax": 125,
+        "currencyCode": "GBP",
+        "rateMode": "Highest",
+        "isCommissionable": false,
+        "hasRateChange": true
+      },
+      "maxRate": {
+        "amountBeforeTax": 285,
+        "currencyCode": "GBP",
+        "rateMode": "Highest",
+        "isCommissionable": true,
+        "hasRateChange": true
+      }
+    },
+    {
+      "propertyInfo": {
+        "hotelCode": "DUMMY1",
+        "isAlternate": false
+      },
+      "availability": "NotFound"
+    },
+    {
+      "propertyInfo": {
+        "hotelCode": "XSBOXD4",
+        "hotelName": "Sandbox Tokyo Hotel",
+        "chainCode": "OH",
+        "isAlternate": false
+      },
+      "availability": "Restricted"
+    }
+  ]
+}

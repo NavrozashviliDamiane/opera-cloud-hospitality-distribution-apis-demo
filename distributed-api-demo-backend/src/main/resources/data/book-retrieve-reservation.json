@@ -1,0 +1,78 @@
+[
+  {
+    "reservationIds": [
+      {
+        "id": "229301",
+        "type": "Reservation",
+        "idContext": "Central",
+        "idExtension": "1"
+      },
+      {
+        "id": "2611727",
+        "type": "Confirmation",
+        "idContext": "Central",
+        "idExtension": "1"
+      }
+    ],
+    "lastModifyDateTime": "2025-03-10T22:30:37Z",
+    "reservationStatus": "Reserved",
+    "roomStay": {
+      "arrivalDate": "2024-12-10",
+      "departureDate": "2024-12-11",
+      "guestCounts": {
+        "adults": 1,
+        "children": 0
+      },
+      "guarantee": {
+        "guaranteeCode": "6PM",
+        "guaranteeType": "38"
+      },
+      "roomRates": [
+        {
+          "rates": {
+            "rate": [
+              {
+                "base": {
+                  "amountBeforeTax": 210.11,
+                  "currencyCode": "USD"
+                },
+                "start": "2024-12-10",
+                "end": "2024-12-10"
+              }
+            ]
+          },
+          "roomType": "A1K",
+          "ratePlanCode": "FLEX",
+          "numberOfUnits": 1,
+          "ratePlanInfo": {
+            "ratePlanName": "Flexible Rate",
+            "ratePlanType": "11"
+          }
+        }
+      ],
+      "total": {
+        "amountBeforeTax": 210.11,
+        "amountAfterTax": 231.12,
+        "currencyCode": "USD"
+      }
+    },
+    "reservationGuests": [
+      {
+        "profileInfo": {
+          "profile": {
+            "customer": {
+              "personName": [
+                {
+                  "surname": "Smith",
+                  "givenName": "John",
+                  "nameType": "Primary"
+                }
+              ]
+            }
+          }
+        },
+        "primary": true
+      }
+    ]
+  }
+]

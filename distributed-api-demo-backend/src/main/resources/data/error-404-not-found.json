@@ -1,0 +1,9 @@
+{
+  "title": "Reservation not found",
+  "status": 404,
+  "o:errorCode": "DCRG00404",
+  "type": "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4",
+  "timestamp": "2024-12-01T10:30:00Z",
+  "logId": 123456790,
+  "o:errorPath": "/book/v1/hotels/XSBOXD1/reservations/9999999"
+}
